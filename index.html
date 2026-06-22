@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="麺屋松場 - 至極の一杯をあなたへ。本格手打ち麺と自慢のスープで作る、記憶に残るラーメン。" />
+  <title>麺屋松場</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <a href="#" class="header__logo">麺屋<span>松場</span></a>
+    <nav>
+      <ul class="header__nav" id="nav">
+        <li><a href="#menu" onclick="closeMenu()">メニュー</a></li>
+        <li><a href="#store" onclick="closeMenu()">店舗情報</a></li>
+        <li><a href="#news" onclick="closeMenu()">お知らせ</a></li>
+      </ul>
+    </nav>
+    <button class="header__hamburger" id="hamburger" aria-label="メニューを開く" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="top">
+    <div class="hero__bg-text" aria-hidden="true">RAMEN</div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Since 2010 · Authentic Japanese Ramen</p>
+      <h1 class="hero__title">
+        至極の<em>一杯</em>を<br>あなたへ
+      </h1>
+      <p class="hero__subtitle">
+        丁寧に仕込んだスープと、毎朝打つ自家製麺。<br>
+        素材の声を聞き、記憶に残る味を作り続けます。
+      </p>
+      <a href="#menu" class="hero__cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        メニューを見る
+      </a>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section id="menu">
+    <div class="section-inner">
+      <p class="section-label">Menu</p>
+      <h2 class="section-title fade-in">こだわりの<br>メニュー</h2>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" onclick="filterMenu('all', this)">すべて</button>
+        <button class="menu-tab" onclick="filterMenu('ramen', this)">ラーメン</button>
+        <button class="menu-tab" onclick="filterMenu('side', this)">サイド</button>
+        <button class="menu-tab" onclick="filterMenu('drink', this)">ドリンク</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid">
+
+        <div class="menu-card fade-in" data-category="ramen">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=360&fit=crop&q=80" alt="醤油ラーメン" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">看板メニュー</span>
+            <h3 class="menu-card__name">醤油ラーメン</h3>
+            <p class="menu-card__desc">鶏ガラと昆布で丁寧に引いた黄金のスープ。手打ち中細麺との絶妙なハーモニー。</p>
+            <p class="menu-card__price">¥950 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="ramen">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1591325418441-ff678baf78ef?w=600&h=360&fit=crop&q=80" alt="味噌ラーメン" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">人気 No.2</span>
+            <h3 class="menu-card__name">濃厚味噌ラーメン</h3>
+            <p class="menu-card__desc">北海道産赤味噌をブレンド。コクと甘みが絶妙なバランスで広がる一杯。</p>
+            <p class="menu-card__price">¥1,050 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="ramen">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1638866281450-3933540af86a?w=600&h=360&fit=crop&q=80" alt="塩ラーメン" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">あっさり</span>
+            <h3 class="menu-card__name">潮（しお）ラーメン</h3>
+            <p class="menu-card__desc">瀬戸内の塩と鶏の旨みが溶け合う、澄んだスープの塩ラーメン。素材本来の味。</p>
+            <p class="menu-card__price">¥900 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="ramen">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1661492094601-cc9aef4d406f?w=600&h=360&fit=crop&q=80" alt="特製つけ麺" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">限定</span>
+            <h3 class="menu-card__name">特製つけ麺</h3>
+            <p class="menu-card__desc">濃厚魚介豚骨スープに浸ける、もちもちの太麺。数量限定のため早めにどうぞ。</p>
+            <p class="menu-card__price">¥1,200 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="side">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1589047133481-02b4a5327d89?w=600&h=360&fit=crop&q=80" alt="手作り餃子" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">サイド</span>
+            <h3 class="menu-card__name">手作り餃子（6個）</h3>
+            <p class="menu-card__desc">毎朝丁寧に包んだジューシーな手作り餃子。外はパリッ、中はふっくら。</p>
+            <p class="menu-card__price">¥500 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="side">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=360&fit=crop&q=80" alt="半チャーハン" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">サイド</span>
+            <h3 class="menu-card__name">半チャーハン</h3>
+            <p class="menu-card__desc">パラパラに炒めた香ばしいチャーハン。ラーメンとのセットがおすすめ。</p>
+            <p class="menu-card__price">¥400 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="drink">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&h=360&fit=crop&q=80" alt="生ビール" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">ドリンク</span>
+            <h3 class="menu-card__name">生ビール</h3>
+            <p class="menu-card__desc">キンキンに冷えた生ビール。ラーメンとの相性抜群。</p>
+            <p class="menu-card__price">¥600 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="drink">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1618183479302-1e0aa382c36b?w=600&h=360&fit=crop&q=80" alt="ソフトドリンク" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">ドリンク</span>
+            <h3 class="menu-card__name">ソフトドリンク</h3>
+            <p class="menu-card__desc">コーラ・ウーロン茶・オレンジジュースよりお選びください。</p>
+            <p class="menu-card__price">¥300 <span>税込</span></p>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="drink">
+          <img class="menu-card__img" src="https://images.unsplash.com/photo-1566633806327-68e152aaf26d?w=600&h=360&fit=crop&q=80" alt="ホッピーセット" loading="lazy">
+          <div class="menu-card__body">
+            <span class="menu-card__badge">人気</span>
+            <h3 class="menu-card__name">ホッピーセット</h3>
+            <p class="menu-card__desc">焼酎とホッピーの黄金コンビ。氷入りジョッキで提供。ラーメンのお供に最高の一杯。</p>
+            <p class="menu-card__price">¥700 <span>税込</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORE INFO ========== -->
+  <section id="store">
+    <div class="section-inner">
+      <p class="section-label">Store Info</p>
+      <h2 class="section-title fade-in">店舗情報</h2>
+
+      <div class="store-grid">
+        <ul class="store-info-list">
+          <li class="store-info-item fade-in">
+            <span class="store-info-item__icon">📍</span>
+            <div>
+              <p class="store-info-item__label">住所</p>
+              <p class="store-info-item__value">
+                〒000-0000<br>
+                東京都〇〇区〇〇 1-2-3<br>
+                <small>※ 住所は constants.js で変更できます</small>
+              </p>
+            </div>
+          </li>
+          <li class="store-info-item fade-in">
+            <span class="store-info-item__icon">🕐</span>
+            <div>
+              <p class="store-info-item__label">営業時間</p>
+              <p class="store-info-item__value">
+                11:00 〜 21:00<br>
+                <small>ランチ 11:00〜14:30 / ディナー 17:00〜21:00</small>
+              </p>
+            </div>
+          </li>
+          <li class="store-info-item fade-in">
+            <span class="store-info-item__icon">📅</span>
+            <div>
+              <p class="store-info-item__label">定休日</p>
+              <p class="store-info-item__value">
+                火曜日<br>
+                <small>祝日は営業いたします</small>
+              </p>
+            </div>
+          </li>
+          <li class="store-info-item fade-in">
+            <span class="store-info-item__icon">📞</span>
+            <div>
+              <p class="store-info-item__label">電話番号</p>
+              <p class="store-info-item__value">
+                <a href="tel:03-XXXX-XXXX" style="color:inherit;">03-XXXX-XXXX</a>
+              </p>
+            </div>
+          </li>
+          <li class="store-info-item fade-in">
+            <span class="store-info-item__icon">🚃</span>
+            <div>
+              <p class="store-info-item__label">アクセス</p>
+              <p class="store-info-item__value">
+                〇〇線「〇〇駅」徒歩3分<br>
+                <small>お車でお越しの場合は近隣のコインパーキングをご利用ください</small>
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="store-map fade-in">
+          <!-- Google Maps埋め込みURLをここに設定してください -->
+          <!-- <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" allowfullscreen loading="lazy"></iframe> -->
+          <div class="store-map__placeholder">
+            <span class="store-map__placeholder-icon">🗺️</span>
+            <p>Google Maps</p>
+            <small style="color:#666;">index.html の store-map 部分に<br>埋め込みURLを設定してください</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWS ========== -->
+  <section id="news">
+    <div class="section-inner">
+      <p class="section-label">News &amp; SNS</p>
+      <h2 class="section-title fade-in">お知らせ</h2>
+
+      <div class="news-grid">
+        <article class="news-card fade-in">
+          <div class="news-card__meta">
+            <time class="news-card__date">2026.06.20</time>
+            <span class="news-card__tag">新メニュー</span>
+          </div>
+          <h3 class="news-card__title">夏季限定「冷やし醤油ラーメン」登場！</h3>
+          <p class="news-card__body">暑い季節にぴったりの冷やしラーメンが登場しました。7月末までの限定メニューです。ぜひお早めにお試しください。</p>
+        </article>
+
+        <article class="news-card fade-in">
+          <div class="news-card__meta">
+            <time class="news-card__date">2026.06.10</time>
+            <span class="news-card__tag">お知らせ</span>
+          </div>
+          <h3 class="news-card__title">6月の臨時休業のご案内</h3>
+          <p class="news-card__body">6月25日（水）は仕込みのため臨時休業とさせていただきます。ご不便をおかけし大変申し訳ございません。</p>
+        </article>
+
+        <article class="news-card fade-in">
+          <div class="news-card__meta">
+            <time class="news-card__date">2026.05.01</time>
+            <span class="news-card__tag">イベント</span>
+          </div>
+          <h3 class="news-card__title">麺屋松場 16周年を迎えました</h3>
+          <p class="news-card__body">おかげさまで創業16周年を迎えることができました。感謝を込めて、5月中は餃子を半額にてご提供いたします。</p>
+        </article>
+      </div>
+
+      <div class="sns-row">
+        <a href="#" class="sns-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="#" class="sns-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X (Twitter)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p class="footer__logo">麺屋<span>松場</span></p>
+    <ul class="footer__nav">
+      <li><a href="#menu">メニュー</a></li>
+      <li><a href="#store">店舗情報</a></li>
+      <li><a href="#news">お知らせ</a></li>
+    </ul>
+    <p class="footer__copy">&copy; 2026 麺屋松場 All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
